@@ -117,6 +117,8 @@ prompt_git() {
 
       behind=$(git rev-list HEAD..${hook_com[branch]}@{upstream} 2>/dev/null | wc -l | tr -d '[[:space:]]')
       (( $behind )) && gitstatus+=( "↓${behind}" )
+
+      (( $ahead + $behind == 0 )) && gitstatus+=( "✓" )
     fi
 
     local unst stag untr stag_str untr_str unst_str
