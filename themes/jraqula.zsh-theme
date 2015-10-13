@@ -248,5 +248,5 @@ build_prompt() {
 }
 
 PROMPT='%{%f%b%k%}$(build_prompt) '
-RPROMPT='%U%t '
+#RPROMPT='%U%t '
 
