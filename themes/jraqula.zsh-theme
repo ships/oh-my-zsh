@@ -119,10 +119,11 @@ prompt_git() {
       (( $ahead + $behind == 0 )) && gitstatus+=( "✓" )
     fi
 
-    local unst stag untr stag_str untr_str unst_str
-    untr=$(git status --porcelain | grep '^??' | wc -l | tr -d '[[:space:]]')
-    unst=$(git status --porcelain | egrep '^( M| A)' | wc -l | tr -d '[[:space:]]')
-    stag=$(git status --porcelain | egrep '^(M|A)' | wc -l | tr -d '[[:space:]]')
+    local stat unst stag untr stag_str untr_str unst_str
+    stat=$(git status --porcelain)
+    untr=$(echo $stat | grep '^??' | wc -l | tr -d '[[:space:]]')
+    unst=$(echo $stat | egrep '^( M| A)' | wc -l | tr -d '[[:space:]]')
+    stag=$(echo $stat | egrep '^(M|A)' | wc -l | tr -d '[[:space:]]')
 
 
     echo -n "${ref/refs\/heads\//}${vcs_info_msg_0_%% } ${gitstatus}${mode}"
