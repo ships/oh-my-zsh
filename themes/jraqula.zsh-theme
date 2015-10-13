@@ -27,12 +27,8 @@
 
 CURRENT_BG='NONE'
 
-# Fix odd char on mac
-if [[ `uname` == 'Darwin' ]]; then
-    SEGMENT_SEPARATOR='♮'
-else
-    SEGMENT_SEPARATOR='♮'
-fi
+SEGMENT_SEPARATOR='⮀'
+#another choice: ▘
 
 # Begin a segment
 # Takes two arguments, background and foreground. Both can be omitted,
