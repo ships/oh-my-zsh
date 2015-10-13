@@ -81,6 +81,8 @@ prompt_git() {
       prompt_segment green black
     fi
 
+    echo -n "\ue0a0 "
+
     if [[ -e "${repo_path}/BISECT_LOG" ]]; then
       mode=" <B>"
     elif [[ -e "${repo_path}/MERGE_HEAD" ]]; then
