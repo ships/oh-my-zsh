@@ -231,7 +231,7 @@ prompt_status() {
 }
 
 prompt_chevron() {
-  prompt_segment black black "\r"
+  echo -n "%{%F{black}%K{blue}%}${SEGMENT_SEPARATOR}"
 }
 
 ## Main prompt
