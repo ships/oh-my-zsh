@@ -227,17 +227,12 @@ prompt_status() {
   [[ $UID -eq 0 ]] && symbols+="%{%F{yellow}%}⚡"
   [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{cyan}%}⚙"
 
-  [[ -n "$symbols" ]] && prompt_segment black default "$symbols"
-}
-
-prompt_chevron() {
-  echo -n "%{%F{black}%K{blue}%}${SEGMENT_SEPARATOR}"
+  prompt_segment black default "$symbols"
 }
 
 ## Main prompt
 build_prompt() {
   RETVAL=$?
-  prompt_chevron
   prompt_status
   prompt_virtualenv
   prompt_context
