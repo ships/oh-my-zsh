@@ -247,6 +247,7 @@ prompt_status() {
 ## Main prompt
 build_prompt() {
   RETVAL=$?
+  nohup git fetch > /dev/null 2>&1 &
   prompt_status
   prompt_virtualenv
   prompt_context
