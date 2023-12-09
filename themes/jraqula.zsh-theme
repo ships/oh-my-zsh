@@ -27,7 +27,7 @@
 
 CURRENT_BG='NONE'
 
-SEGMENT_SEPARATOR='⮀'
+SEGMENT_SEPARATOR=''
 #another choice: ▘
 
 # Begin a segment
